@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Query</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h4>Sell Query</h4>
+이름 
+<input type="text" id="userName">
+아이디
+<input type="text" id="userId">
+<input type="text" id="id" placeholder="Enter ID">
+<input type="button" value="조회하기" id="queryButton">
+<p>Result: <span id="result"></span></p>
+<table>
+    <tr>
+        <td>이름1</td>
+        <td>아이디1</td>
+        <td>패스워드1</td>
+        <td>이메일주소1</td>
+    </tr>
+</table>
+
+    <script>
+        $(document).ready(function() {
+            $('#queryButton').click(function() {
+                var id = $('#id').val();
+                $.ajax({
+                    url: '/sell/getSell',
+                    type: 'GET',
+                    data: { id: id },
+                    success: function(result) {
+                    	var htmlcont = "";
+                    	
+                        $('#result').text('ID: ' + result.USER_NAME + ', Sell: ' + result.USER_NAME);
+                    },
+                    error: function() {
+                        $('#result').text('Error retrieving data');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
