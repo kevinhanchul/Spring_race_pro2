@@ -18,10 +18,10 @@
 <p>Result: <span id="result"></span></p>
 <table>
     <tr>
-        <td>이름</td>
-        <td>아이디</td>
-        <td>패스워드</td>
-        <td>이메일주소</td>
+        <td>선수명</td>
+        <td>일자</td>
+        <td>회차</td>
+        <td>시행처</td>
     </tr>
 </table>
 
@@ -29,6 +29,7 @@
         $(document).ready(function() {
             $('#queryButton').click(function() {
                 var id = $('#id').val();
+                id=100;
                 $.ajax({
                     url: '/raceInfo/getRaceInfo',
                     type: 'GET',
@@ -36,7 +37,7 @@
                     success: function(result) {
                     	var htmlcont = "";
                     	
-                        $('#result').text('ID: ' + result.USER_NAME + ', RaceInfo: ' + result.USER_NAME);
+                        $('#result').text('주자이름: ' + result.runner_name);
                     },
                     error: function() {
                         $('#result').text('Error retrieving data');

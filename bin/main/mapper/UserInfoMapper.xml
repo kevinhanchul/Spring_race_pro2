@@ -5,14 +5,14 @@
 
 <mapper namespace="com.example.demo.mapper.UserInfoMapper">
     <select id="selUserInfo" parameterType="long" resultType="map">
-    SELECT USER_NAME, USER_ID, USER_PW, USER_EMAIL
-    FROM T_USER_INFO WHERE USER_NAME='lwhathamrr' 
-        <!-- select 
+    <!-- SELECT USER_NAME, USER_ID, USER_PW, USER_EMAIL
+    FROM T_USER_INFO WHERE USER_NAME='lwhathamrr' --> 
+        select 
 			USER_NAME,
 			USER_ID,
 			USER_PW,
 			USER_EMAIL
 		from t_user_info
-		LIMIT 0,1 -->
+		LIMIT 0,1
     </select>
 </mapper>

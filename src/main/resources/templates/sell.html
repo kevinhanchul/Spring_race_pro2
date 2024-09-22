@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h4>Sell Query</h4>
+    <h4>Sell</h4>
 이름 
 <input type="text" id="userName">
 아이디
@@ -18,10 +18,13 @@
 <p>Result: <span id="result"></span></p>
 <table>
     <tr>
-        <td>이름1</td>
-        <td>아이디1</td>
-        <td>패스워드1</td>
-        <td>이메일주소1</td>
+        <td>고객명</td>
+        <td>경주번호</td>
+        <td>승식</td>
+        <td>선수선택</td>
+        <td>배팅금액</td>
+        <td>배당</td>
+        <td>환불금액</td>
     </tr>
 </table>
 
@@ -29,14 +32,14 @@
         $(document).ready(function() {
             $('#queryButton').click(function() {
                 var id = $('#id').val();
+                id=100;
                 $.ajax({
                     url: '/sell/getSell',
                     type: 'GET',
                     data: { id: id },
                     success: function(result) {
-                    	var htmlcont = "";
-                    	
-                        $('#result').text('ID: ' + result.USER_NAME + ', Sell: ' + result.USER_NAME);
+                    	var htmlcont = "";                    	
+                        $('#result').text('고객명: ' + result.user_name); 
                     },
                     error: function() {
                         $('#result').text('Error retrieving data');

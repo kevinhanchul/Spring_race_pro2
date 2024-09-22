@@ -16,9 +16,10 @@ public class RunnerInfoService {
     }
 
     public Map<String, Object> getRunnerInfo(Long id) {
-        String USER_NAME = (String) runnerInfoMapper.selRunnerInfo(id);
+    	Map<String, Object> runner_result;
+    	runner_result = runnerInfoMapper.selRunnerInfo(id);
         Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("USER_NAME", USER_NAME);
+        resultMap.put("runner_result", runner_result);
         return resultMap;
     }
 }

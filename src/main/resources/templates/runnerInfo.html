@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h4>RunnerInfo Query</h4>
+    <h4>주자</h4>
 이름 
 <input type="text" id="userName">
 아이디
@@ -19,9 +19,11 @@
 <table>
     <tr>
         <td>이름</td>
-        <td>아이디</td>
-        <td>패스워드</td>
-        <td>이메일주소</td>
+        <td>나이</td>
+        <td>소속</td>
+        <td>몸무게</td>
+        <td>키</td>
+        <td>승률</td>
     </tr>
 </table>
 
@@ -29,12 +31,13 @@
         $(document).ready(function() {
             $('#queryButton').click(function() {
                 var id = $('#id').val();
+                id=100;
                 $.ajax({
                     url: '/runnerInfo/getRunnerInfo',
                     type: 'GET',
                     data: { id: id },
                     success: function(result) {
-                        $('#result').text('ID: ' + result.USER_NAME + ', RunnerInfo: ' + result.USER_NAME);
+                        $('#result').text('주자이름: ' + result.runner_result.RUNNER_NAME);
                     },
                     error: function() {
                         $('#result').text('Error retrieving data');

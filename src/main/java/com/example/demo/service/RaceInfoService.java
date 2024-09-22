@@ -16,10 +16,9 @@ public class RaceInfoService {
     }
 
     public Map<String, Object> getRaceInfo(Long id) {
-        String USER_NAME = (String) raceInfoMapper.selRaceInfo(id);
-        Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("USER_NAME", USER_NAME);
-//        resultMap.put("raceInfo", raceInfo);
-        return resultMap;
+    	Map<String, Object> race_result = raceInfoMapper.selRaceInfo(id);
+        //Map<String, Object> resultMap = new HashMap<>();
+        //resultMap.put("race_result", race_result);
+        return race_result;
     }
 }

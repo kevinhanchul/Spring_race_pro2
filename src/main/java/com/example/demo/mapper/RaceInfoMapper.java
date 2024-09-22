@@ -1,9 +1,11 @@
 package com.example.demo.mapper;
 
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface RaceInfoMapper {
-    String selRaceInfo(Long id);
+	Map<String, Object> selRaceInfo(Long id);
 }

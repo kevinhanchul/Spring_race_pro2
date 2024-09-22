@@ -31,7 +31,7 @@ CREATE TABLE t_runner_info (
 );
 
 
--- 시간정보 race_info
+-- 경주정보 race_info
 CREATE TABLE t_race_info (
     runner_name varchar(50), /*선수명*/
     race_dy varchar(50), /*일자*/

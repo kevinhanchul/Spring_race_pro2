@@ -16,10 +16,7 @@ public class SellService {
     }
 
     public Map<String, Object> getSell(Long id) {
-        String USER_NAME = (String) sellMapper.selSell(id);
-        Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("USER_NAME", USER_NAME);
-//        resultMap.put("sell", sell);
-        return resultMap;
+    	Map<String, Object> sell_info = sellMapper.selSell(id);
+        return sell_info;
     }
 }
