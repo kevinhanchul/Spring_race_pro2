@@ -61,3 +61,15 @@ CREATE TABLE t_sell(
     ret_amt int/*환불금액  */
 );
 
+
+-- 구매정보 sell
+CREATE TABLE t_self_Limit(
+    user_name varchar(50), /*고객명*/
+    st_dy varchar(50), /*경주번호*/
+    ed_dy varchar(50), /*승식*/
+    day_limit_amt varchar(50), /*선수선택(1번~7번)*/
+    mon_limit_amt int, /*배팅금액*/
+    year_limit_amt float,/*배당*/
+);
+
+
