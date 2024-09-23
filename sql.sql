@@ -62,14 +62,24 @@ CREATE TABLE t_sell(
 );
 
 
--- 구매정보 sell
+-- 구매제한 t_self_Limit
 CREATE TABLE t_self_Limit(
     user_name varchar(50), /*고객명*/
     st_dy varchar(50), /*경주번호*/
     ed_dy varchar(50), /*승식*/
-    day_limit_amt varchar(50), /*선수선택(1번~7번)*/
-    mon_limit_amt int, /*배팅금액*/
-    year_limit_amt float,/*배당*/
+    day_limit_amt varchar(50), /*일일제한금액*/
+    mon_limit_amt int, /*주일제한금액*/
+    year_limit_amt float,/*달제한금액*/
 );
 
+insert into t_self_Limit values ('홍길동', '20240901', '20409030', 1000, 10000, 100000);
 
+-- 건전화정보 t_health
+CREATE TABLE t_health(
+    user_name varchar(50), /*고객명*/
+    limit_st_dy varchar(50), /*시작일(베팅제한기간)*/
+    limit_ed_dy varchar(50), /*종료일(베팅제한기간)*/
+    input_dy varchar(50) /*입력일*/
+);
+
+insert into t_health values ('홍길동', '20240901', '20409030', '20230820');
