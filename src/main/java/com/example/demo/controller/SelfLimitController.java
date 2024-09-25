@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.SellService;
+import com.example.demo.service.SelfLimitService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,14 +12,14 @@ import java.util.Map;
 @RequestMapping("/selfLimit")
 public class SelfLimitController {
 
-    private final SellService selfLimitService;
+    private final SelfLimitService selfLimitService;
 
-    public SelfLimitController(SellService selfLimitService) {
+    public SelfLimitController(SelfLimitService selfLimitService) {
         this.selfLimitService = selfLimitService;
     }
 
-    @GetMapping("/getSell")
-    public Map<String, Object> getSell(@RequestParam Long id) {
-        return selfLimitService.getSell(id);
+    @GetMapping("/getSelfLimit")
+    public Map<String, Object> getSelfLimit(@RequestParam Long id) {
+        return selfLimitService.getSelfLimit(id);
     }    
 }

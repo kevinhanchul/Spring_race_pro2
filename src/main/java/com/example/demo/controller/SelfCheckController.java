@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.SellService;
+import com.example.demo.service.SelfCheckService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/sell")
+@RequestMapping("/selfCheck")
 public class SelfCheckController {
 
-    private final SellService sellService;
+    private final SelfCheckService selfCheckService;
 
-    public SelfCheckController(SellService sellService) {
-        this.sellService = sellService;
+    public SelfCheckController(SelfCheckService selfCheckService) {
+        this.selfCheckService = selfCheckService;
     }
 
-    @GetMapping("/getSell")
-    public Map<String, Object> getSell(@RequestParam Long id) {
-        return sellService.getSell(id);
+    @GetMapping("/getSelfCheck")
+    public Map<String, Object> getSelfCheck(@RequestParam Long id) {
+        return selfCheckService.getSelfCheck(id);
     }    
 }

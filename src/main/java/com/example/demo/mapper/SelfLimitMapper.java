@@ -6,5 +6,5 @@ import java.util.Map;
 
 @Mapper
 public interface SelfLimitMapper {
-	Map<String, Object> selSell(Long id);
+	Map<String, Object> selSelfLimit(Long id);
 }

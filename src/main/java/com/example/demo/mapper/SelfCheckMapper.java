@@ -6,5 +6,5 @@ import java.util.Map;
 
 @Mapper
 public interface SelfCheckMapper {
-	Map<String, Object> selSell(Long id);
+	Map<String, Object> selSelfCheck(Long id);
 }

@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.mapper.SellMapper;
+import com.example.demo.mapper.SelfCheckMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -8,14 +8,14 @@ import java.util.Map;
 @Service
 public class SelfCheckService {
 
-    private final SellMapper sellMapper;
+    private final SelfCheckMapper selfCheckMapper;
 
-    public SelfCheckService(SellMapper sellMapper) {
-        this.sellMapper = sellMapper;
+    public SelfCheckService(SelfCheckMapper selfCheckMapper) {
+        this.selfCheckMapper = selfCheckMapper;
     }
 
-    public Map<String, Object> getSell(Long id) {
-    	Map<String, Object> sell_info = sellMapper.selSell(id);
-        return sell_info;
+    public Map<String, Object> getSelfCheck(Long id) {
+    	//Map<String, Object> selfCheck_info = selfCheckMapper.selSelfCheck(id);
+        return selfCheckMapper.selSelfCheck(id);
     }
 }
