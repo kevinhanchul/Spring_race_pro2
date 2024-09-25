@@ -48,6 +48,38 @@ public class FindUrlController {
         return mav;
     }
 
+    @GetMapping("/winnerInfo")
+    private ModelAndView winnerInfo() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("winnerInfo");
+        mav.addObject("message", "Hello, abc.html!");
+        return mav;
+    }
+
+    @GetMapping("/selfLimit")
+    private ModelAndView selfLimit() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("selfLimit");
+        mav.addObject("message", "Hello, abc.html!");
+        return mav;
+    }
+
+    @GetMapping("/healthInfo")
+    private ModelAndView healthInfo() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("healthInfo");
+        mav.addObject("message", "Hello, abc.html!");
+        return mav;
+    }
+
+    @GetMapping("/selfCheck")
+    private ModelAndView selfCheck() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("selfCheck");
+        mav.addObject("message", "Hello, abc.html!");
+        return mav;
+    }
+
     @GetMapping("/userInsert")
     private ModelAndView userInsert() {
         ModelAndView mav = new ModelAndView();
@@ -55,6 +87,8 @@ public class FindUrlController {
         mav.addObject("message", "Hello, abc.html!");
         return mav;
     }
+
+
     
     @PostMapping("/add2")
     public Map<String, Integer> addNumbers(@RequestBody Map<String, String> numbers) throws Exception {
