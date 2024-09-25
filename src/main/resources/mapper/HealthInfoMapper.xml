@@ -7,12 +7,9 @@
     <select id="selHealthInfo" parameterType="long" resultType="map">
         select 
 			user_name,
-			race_no,
-			win_type,
-			runner_no,
-			bet_amt,
-			win_rate,
-			ret_amt
+			limit_st_dy,
+			limit_ed_dy,
+			input_dy
 		from t_healthInfo
 		LIMIT 0,1
     </select>
