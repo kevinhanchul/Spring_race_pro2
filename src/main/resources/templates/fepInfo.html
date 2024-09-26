@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UserInfo Query</title>
+    <title>FepInfo Query</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <style>
@@ -19,7 +19,7 @@ table, tr, td, th{
             var id = $('#id').val();
             id = 1000;
             $.ajax({
-                url: '/userInfo/getUserInfo',
+                url: '/fepInfo/getFepInfo',
                 type: 'GET',
                 data: { id: id },
                 success: function(result) {
@@ -41,11 +41,11 @@ table, tr, td, th{
 </script>
 
 <body>
-    <h4>UserInfo Query</h4>
+    <h4>FepInfo Query</h4>
 이름 
-<input type="text" id="userName">
+<input type="text" id="fepName">
 아이디
-<input type="text" id="userId">
+<input type="text" id="fepId">
 <input type="text" id="id" placeholder="Enter ID">
 <input type="button" value="조회하기" id="queryButton">
 

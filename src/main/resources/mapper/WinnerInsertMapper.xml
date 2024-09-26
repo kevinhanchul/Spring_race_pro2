@@ -14,7 +14,7 @@
 			USER_ID,
 			USER_PW,
 			USER_EMAIL
-		from t_user_info
+		from t_winner_info
 		LIMIT 0,1 -->
     </insert>
 </mapper>

@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/userInsert")
+@RequestMapping("/winnerInsert")
 public class WinnerInsertController {
 
-    private final UserInsertService userInsertService;
+    private final UserInsertService winnerInsertService;
 
-    public WinnerInsertController(UserInsertService userInsertService) {
-        this.userInsertService = userInsertService;
+    public WinnerInsertController(UserInsertService winnerInsertService) {
+        this.winnerInsertService = winnerInsertService;
     }
 
     @GetMapping("/getUserInsert")
     public void getUserInsert(@RequestParam Long id) {
-        userInsertService.getUserInsert(id);
+        winnerInsertService.getUserInsert(id);
     }    
 }

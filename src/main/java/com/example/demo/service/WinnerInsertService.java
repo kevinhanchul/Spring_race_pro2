@@ -6,13 +6,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class WinnerInsertService {
 
-    private final UserInsertMapper userInsertMapper;
+    private final UserInsertMapper winnerInsertMapper;
 
-    public WinnerInsertService(UserInsertMapper userInsertMapper) {
-        this.userInsertMapper = userInsertMapper;
+    public WinnerInsertService(UserInsertMapper winnerInsertMapper) {
+        this.winnerInsertMapper = winnerInsertMapper;
     }
 
     public void getUserInsert(Long id) {
-    	userInsertMapper.selUserInsert(id);
+    	winnerInsertMapper.selUserInsert(id);
     }
 }

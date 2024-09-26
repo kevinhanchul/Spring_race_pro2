@@ -19,7 +19,7 @@ table, tr, td, th{
             var id = $('#id').val();
             id = 1000;
             $.ajax({
-                url: '/userInsert/getUserInsert',
+                url: '/winnerInsert/getUserInsert',
                 type: 'GET',
                 data: { id: id },
                 success: function(result) {
@@ -38,19 +38,19 @@ table, tr, td, th{
 <table>
 <tr>
 <td>이름</td>
-<td><input type="text" id="userName"><br></td>
+<td><input type="text" id="winnerName"><br></td>
 </tr>
 <tr>
 <td>아이디</td>
-<td><input type="text" id="userId"><br></td>
+<td><input type="text" id="winnerId"><br></td>
 </tr>
 <tr>
 <td>패스워드</td>
-<td><input type="text" id="userPw"><br></td>
+<td><input type="text" id="winnerPw"><br></td>
 </tr>
 <tr>
 <td>이메일주소</td>
-<td><input type="text" id="userEmail"><br></td>
+<td><input type="text" id="winnerEmail"><br></td>
 </tr>
 </table>    
 

@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.RaceInfoService;
+import com.example.demo.service.SellInsertService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/raceInfo")
+@RequestMapping("/sellInsert")
 public class SellInsertController {
 
-    private final RaceInfoService raceInfoService;
+    private final SellInsertService sellInsertService;
 
-    public SellInsertController(RaceInfoService raceInfoService) {
-        this.raceInfoService = raceInfoService;
+    public SellInsertController(SellInsertService sellInsertService) {
+        this.sellInsertService = sellInsertService;
     }
 
-    @GetMapping("/getRaceInfo")
-    public Map<String, Object> getRaceInfo(@RequestParam Long id) {
-        return raceInfoService.getRaceInfo(id);
+    @GetMapping("/getSellInsert")
+    public Map<String, Object> getSellInsert(@RequestParam Long id) {
+        return sellInsertService.getSellInsert(id);
     }    
 }

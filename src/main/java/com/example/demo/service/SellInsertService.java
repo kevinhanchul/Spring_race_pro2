@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.mapper.RaceInfoMapper;
+import com.example.demo.mapper.SellInsertMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -8,13 +8,13 @@ import java.util.Map;
 @Service
 public class SellInsertService {
 
-    private final RaceInfoMapper raceInfoMapper;
+    private final SellInsertMapper sellInsertMapper;
 
-    public SellInsertService(RaceInfoMapper raceInfoMapper) {
-        this.raceInfoMapper = raceInfoMapper;
+    public SellInsertService(SellInsertMapper sellInsertMapper) {
+        this.sellInsertMapper = sellInsertMapper;
     }
 
-    public Map<String, Object> getRaceInfo(Long id) {
-        return raceInfoMapper.selRaceInfo(id);
+    public Map<String, Object> getSellInsert(Long id) {
+        return sellInsertMapper.selSellInsert(id);
     }
 }
