@@ -14,7 +14,7 @@ public class SelfCheckService {
         this.selfCheckMapper = selfCheckMapper;
     }
 
-    public Map<String, Object> getSelfCheck(Long id) {
-        return selfCheckMapper.selSelfCheck(id);
+    public Map<String, Object> getSelfCheck(Map<String, Object> paramMap) {
+        return selfCheckMapper.selSelfCheck(paramMap);
     }
 }

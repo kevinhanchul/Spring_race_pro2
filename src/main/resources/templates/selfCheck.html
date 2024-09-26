@@ -7,13 +7,50 @@
     <title>Sell Query</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<style>
+table, tr, td, th{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('#queryButton').click(function() {
+            <!--var userInfo = $('#userInfo').val();-->
+            var paramMap = {
+                userInfo : $('#userInfo').val()
+            };
+            $.ajax({
+                url: 'selfCheck/getSelfCheck',
+                type: 'POST',
+                <!--data: { paramMap : paramMap },-->
+                data: JSON.stringify(paramMap),
+                success: function(result) {
+                    var htmlcont="";
+                    htmlcont+="<tr>";
+                    htmlcont+="<td>"+ result.USER_NAME + "</td>";
+                    htmlcont+="<td>"+ result.CHECK_RES + "</td>";
+                    htmlcont+="<td>"+ result.CHECK_SCORE + "</td>";
+                    htmlcont+="<td>"+ result.INPUT_DY + "</td>";
+                    htmlcont+="</tr>";
+                    $('#result').html(htmlcont);
+                },
+                error: function() {
+                    $('#result').text('Error retrieving data');
+                }
+            });
+        });
+    });
+</script>
+
 <body>
 <h4>SelfCheck</h4>
 <select>
     <option selected>고객명</option>
     <option>아이디</option>
 </select>
-<input type="text" id="userInfo">
+<input type="text" id="userInfo" value="홍길동">
 
 고객명
 <input type="text" id="userName">
@@ -33,31 +70,6 @@
     <tbody id="result"></tbody>
 </table>
 
-    <script>
-        $(document).ready(function() {
-            $('#queryButton').click(function() {
-                var userInfo = $('#userInfo').val();
-                userInfo=100;
-                $.ajax({
-                    url: 'selfCheck/getSelfCheck',
-                    type: 'GET',
-                    data: { id : userInfo },
-                    success: function(result) {
-                    	var htmlcont="";
-                        htmlcont+="<tr>";
-                        htmlcont+="<td>"+ result.USER_NAME + "</td>";
-                        htmlcont+="<td>"+ result.CHECK_RES + "</td>";
-                        htmlcont+="<td>"+ result.CHECK_SCORE + "</td>";
-                        htmlcont+="<td>"+ result.INPUT_DY + "</td>";
-                        htmlcont+="</tr>";
-                        $('#result').html(htmlcont);
-                    },
-                    error: function() {
-                        $('#result').text('Error retrieving data');
-                    }
-                });
-            });
-        });
-    </script>
+
 </body>
 </html>
