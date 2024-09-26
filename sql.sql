@@ -61,6 +61,15 @@ CREATE TABLE t_sell(
     ret_amt int/*환불금액  */
 );
 
+-- 자가진단정보 t_self_check
+CREATE TABLE t_self_check(
+    user_name varchar(50), /*고객명*/
+    check_res varchar(50), /*진단결과*/
+    check_score varchar(50), /*점수*/
+    input_dy varchar(50) /*진단일자*/
+);
+
+insert into t_self_check values ('홍길동', '나쁨', '100', '20240926');
 
 -- 구매제한 t_self_Limit
 CREATE TABLE t_self_Limit(
@@ -83,3 +92,13 @@ CREATE TABLE t_health(
 );
 
 insert into t_health values ('홍길동', '20240901', '20409030', '20230820');
+
+-- 연동정보 t_fep_info
+CREATE TABLE t_fep_info(
+    user_name varchar(50), /*고객명*/
+    in_amt varchar(50), /*입금액*/
+    out_amt varchar(50), /*출금액*/
+    rem_amt varchar(50) /*잔액*/
+);
+
+insert into t_fep_info values ('홍길동', 200, 100, 100);

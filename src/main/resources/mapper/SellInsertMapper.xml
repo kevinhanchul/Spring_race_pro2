@@ -5,7 +5,7 @@
 
 <mapper namespace="com.example.demo.mapper.SellInsertMapper">
     <select id="selSellInsert" parameterType="long" resultType="map">
-        select 
+        select
 			runner_name,
 			RACE_DY,
 			RACE_CNT,

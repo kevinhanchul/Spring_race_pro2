@@ -5,12 +5,12 @@
 
 <mapper namespace="com.example.demo.mapper.SelfCheckMapper">
     <select id="selSelfCheck" parameterType="long" resultType="map">
-        select 
-			user_name,
-			check_res,
-			check_score,
-			input_dy
-		from t_self_check
+		SELECT
+			USER_NAME,
+			CHECK_RES,
+			CHECK_SCORE,
+			INPUT_DY
+		FROM T_SELF_CHECK
 		LIMIT 0,1
     </select>
 </mapper>

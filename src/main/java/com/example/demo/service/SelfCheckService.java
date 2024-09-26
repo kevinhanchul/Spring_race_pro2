@@ -15,7 +15,6 @@ public class SelfCheckService {
     }
 
     public Map<String, Object> getSelfCheck(Long id) {
-    	//Map<String, Object> selfCheck_info = selfCheckMapper.selSelfCheck(id);
         return selfCheckMapper.selSelfCheck(id);
     }
 }
