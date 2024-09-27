@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FepInfo Query</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+table, tr, td, th{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+<script>
+    $(document).ready(function() {
+        $('#queryButton').click(function() {
+            var id = $('#id').val();
+            id = 1000;
+            $.ajax({
+                url: '/fepInfo/getFepInfo',
+                type: 'GET',
+                data: { id: id },
+                success: function(result) {
+                	var htmlcont="";
+                	htmlcont+="<tr>";
+               		htmlcont+="<td>"+ result.USER_RESULT.USER_NAME + "</td>";
+           			htmlcont+="<td>"+ result.USER_RESULT.USER_ID + "</td>";
+       				htmlcont+="<td>"+ result.USER_RESULT.USER_PW + "</td>";
+   					htmlcont+="<td>"+ result.USER_RESULT.USER_EMAIL + "</td>";
+   					htmlcont+="</tr>";
+                    $('#result_val').html(htmlcont);
+                },
+                error: function() {
+                    $('#result_val').html('Error retrieving data');
+                }
+            });
+        });
+    });
+</script>
+
+<body>
+    <h4>FepInfo Query</h4>
+이름 
+<input type="text" id="fepName">
+아이디
+<input type="text" id="fepId">
+<input type="text" id="id" placeholder="Enter ID">
+<input type="button" value="조회하기" id="queryButton">
+
+<table style="width:850px">
+	<colgroup>
+		<col style="width:25%" />
+		<col style="width:25%" />
+		<col style="width:25%" />
+		<col />
+	</colgroup>
+    <thead>
+    	<tr>
+	        <th>이름</th>
+	        <th>아이디</th>
+	        <th>패스워드</th>
+	        <th>이메일주소</th>
+        </tr>
+    </thead>	
+    <tbody id="result_val"></tbody>      
+</table>
+
+</body>
+</html>
+

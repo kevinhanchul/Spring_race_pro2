@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Query</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+table, tr, td, th{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('#queryButton').click(function() {
+            var userInfo = $('#userInfo').val();
+            $.ajax({
+                url: 'selfCheck/getSelfCheck',
+                type: 'GET',
+                data: { userInfo : userInfo },
+                <!--data: JSON.stringify(paramMap),-->
+                success: function(result) {
+                    var htmlcont="";
+                    htmlcont+="<tr>";
+                    htmlcont+="<td>"+ result.USER_NAME + "</td>";
+                    htmlcont+="<td>"+ result.CHECK_RES + "</td>";
+                    htmlcont+="<td>"+ result.CHECK_SCORE + "</td>";
+                    htmlcont+="<td>"+ result.INPUT_DY + "</td>";
+                    htmlcont+="</tr>";
+                    $('#result').html(htmlcont);
+                },
+                error: function() {
+                    $('#result').text('Error retrieving data');
+                }
+            });
+        });
+    });
+</script>
+
+<body>
+<h4>SelfCheck</h4>
+<select>
+    <option selected>고객명</option>
+    <option>아이디</option>
+</select>
+<input type="text" id="userInfo" value="'홍길동'">
+
+고객명
+<input type="text" id="userName">
+아이디
+<input type="text" id="userId">
+
+
+<input type="text" id="id" placeholder="Enter ID">
+<input type="button" value="조회하기" id="queryButton">
+<table>
+    <tr>
+        <td>고객명</td>
+        <td>진단결과</td>
+        <td>점수</td>
+        <td>진단일자</td>
+    </tr>
+    <tbody id="result"></tbody>
+</table>
+
+
+</body>
+</html>
