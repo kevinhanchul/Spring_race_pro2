@@ -14,8 +14,7 @@ public class SelfLimitService {
         this.selfLimitMapper = selfLimitMapper;
     }
 
-    public Map<String, Object> getSelfLimit(Long id) {
-    	//Map<String, Object> selfLimit_info = selfLimitMapper.selSelfLimit(id);
-        return selfLimitMapper.selSelfLimit(id);
+    public Map<String, Object> getSelfLimit(Map<String, Object> paramMap) {
+        return selfLimitMapper.selSelfLimit(paramMap);
     }
 }

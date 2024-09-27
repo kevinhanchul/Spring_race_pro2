@@ -72,16 +72,16 @@ CREATE TABLE t_self_check(
 insert into t_self_check values ('홍길동', '나쁨', '100', '20240926');
 
 -- 구매제한 t_self_Limit
-CREATE TABLE t_self_Limit(
+CREATE TABLE t_self_limit(
     user_name varchar(50), /*고객명*/
     st_dy varchar(50), /*경주번호*/
     ed_dy varchar(50), /*승식*/
     day_limit_amt varchar(50), /*일일제한금액*/
     mon_limit_amt int, /*주일제한금액*/
-    year_limit_amt float,/*달제한금액*/
+    year_limit_amt float /*달제한금액*/
 );
 
-insert into t_self_Limit values ('홍길동', '20240901', '20409030', 1000, 10000, 100000);
+insert into t_self_limit values ('홍길동', '20240901', '20409030', 1000, 10000, 100000);
 
 -- 건전화정보 t_health
 CREATE TABLE t_health(
